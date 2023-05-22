@@ -28,6 +28,6 @@ describe('Real World App Tests', () => {
 
   after(()=> {
     //Log out
-    //cy.get('div[data-test="sidenav-signout"]').click()
+    cy.get('div[data-test="sidenav-signout"]').click()
   })
 })
