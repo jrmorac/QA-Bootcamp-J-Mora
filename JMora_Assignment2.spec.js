@@ -14,7 +14,7 @@ describe('Real World App Tests', () => {
     //cy.get('h6[data-test="sidenav-username"]').contains('@Katharina_Bernier')
   //})
 
-  it('Log in and Log out', () => {
+  it('Create New Account / Delete Account', () => {
     cy.get('.MuiListItemText-root').contains('Bank Accounts').click()
     cy.get('.MuiButton-label').contains('Create').click()
     cy.get('#bankaccount-bankName-input').type('Jose Mora Casal')
