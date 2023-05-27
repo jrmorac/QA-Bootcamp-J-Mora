@@ -2,6 +2,8 @@
 /// <reference types="cypress" />
 import { NewAccountPage } from "../../page-objects/pages/newAccount";
 import { DeleteAccountPage } from "../../page-objects/pages/deleteAccount";
+import { LoginPage } from "../../page-objects/pages/login";
+import { LogoutPage } from "../../page-objects/pages/logout";
 
 describe('Real World App Account Tests', () => {
   let UUID = '1' + Math.random().toString();
@@ -14,14 +16,12 @@ describe('Real World App Account Tests', () => {
   beforeEach(()=> {
     cy.visit('http://localhost:3000/signin')
     //Log in
-    cy.get('#username').type(username)
-    cy.get('#password').type(password)
-    cy.get('.MuiButton-label').click()
+    LoginPage.login(username,password)
   });
 
   afterEach(()=> {
     //Log out
-    cy.get('div[data-test="sidenav-signout"]').click()
+    LogoutPage.logout();
   });
 
   it('Should Create New Account', () => {
